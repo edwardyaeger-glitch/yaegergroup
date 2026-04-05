@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="./style.css">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240' fill='none'%3E%3Cpath d='M140 18L168 18L234 230L76 230L112 128L196 128L196 152L130 152L100 206L210 206L156 42Z' fill='%23c8782a'/%3E%3Cpath d='M8 8L32 8L94 110L94 230L70 230L70 110Z' fill='%232a2a2a'/%3E%3Cpath d='M140 8L164 8L94 110L70 110Z' fill='%232a2a2a'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240' fill='none'%3E%3CclipPath id='c'%3E%3Crect x='0' y='22' width='240' height='206'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23c)'%3E%3Cpath d='M185.9 123.9L222.9 212.3L220.1 216.6L113.1 216.9L110.1 212.5L182.7 22.5' stroke='%23c8782a' stroke-width='17.2' fill='none' stroke-linejoin='round'/%3E%3Cpath d='M183.9-70.7L105 138L101.5 138.1L32-19.6' stroke='%232a2a2a' stroke-width='17.2' fill='none' stroke-linejoin='round'/%3E%3Cpath d='M154.6 7L50.5 282.4' stroke='%232a2a2a' stroke-width='17.2' fill='none'/%3E%3C/g%3E%3C/svg%3E">
 </head>
 <body>
 
@@ -30,9 +30,12 @@
       <a href="#" class="logo-link" aria-label="Yaeger Group — home">
         <!-- SVG Logo: Y/G monogram matching the Yaeger Group brand mark -->
         <svg class="logo-mark" width="36" height="36" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M 140 18 L 168 18 L 234 230 L 76 230 L 112 128 L 196 128 L 196 152 L 130 152 L 100 206 L 210 206 L 156 42 Z" fill="var(--color-primary)"/>
-          <path class="logo-y" d="M 8 8 L 32 8 L 94 110 L 94 230 L 70 230 L 70 110 Z" fill="var(--color-text)"/>
-          <path class="logo-y" d="M 140 8 L 164 8 L 94 110 L 70 110 Z" fill="var(--color-text)"/>
+          <clipPath id="logo-clip"><rect x="0" y="22" width="240" height="206"/></clipPath>
+          <g clip-path="url(#logo-clip)">
+            <path d="M 185.9 123.9 L 222.9 212.3 L 220.1 216.6 L 113.1 216.9 L 110.1 212.5 L 182.7 22.5" stroke="var(--color-primary)" stroke-width="17.2" fill="none" stroke-linejoin="round"/>
+            <path d="M 183.9 -70.7 L 105.0 138.0 L 101.5 138.1 L 32.0 -19.6" stroke="var(--color-text)" stroke-width="17.2" fill="none" stroke-linejoin="round"/>
+            <path d="M 154.6 7.0 L 50.5 282.4" stroke="var(--color-text)" stroke-width="17.2" fill="none"/>
+          </g>
         </svg>
         <span class="logo-text">Yaeger Group</span>
       </a>
@@ -78,11 +81,15 @@
       <div class="hero-logo" aria-hidden="true">
         <!-- Full logo mark with wordmark, matching the Yaeger Group brand -->
         <svg class="hero-logo-svg" width="160" height="200" viewBox="0 0 240 310" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- G shape (behind Y) -->
-          <path d="M 140 18 L 168 18 L 234 230 L 76 230 L 112 128 L 196 128 L 196 152 L 130 152 L 100 206 L 210 206 L 156 42 Z" fill="var(--color-primary)"/>
-          <!-- Y shape (in front) -->
-          <path d="M 8 8 L 32 8 L 94 110 L 94 230 L 70 230 L 70 110 Z" fill="var(--color-text)"/>
-          <path d="M 140 8 L 164 8 L 94 110 L 70 110 Z" fill="var(--color-text)"/>
+          <clipPath id="hero-clip"><rect x="0" y="22" width="240" height="206"/></clipPath>
+          <g clip-path="url(#hero-clip)">
+            <!-- G: stroked open triangle, gap at upper-right -->
+            <path d="M 185.9 123.9 L 222.9 212.3 L 220.1 216.6 L 113.1 216.9 L 110.1 212.5 L 182.7 22.5" stroke="var(--color-primary)" stroke-width="17.2" fill="none" stroke-linejoin="round"/>
+            <!-- Y right arm -->
+            <path d="M 183.9 -70.7 L 105.0 138.0 L 101.5 138.1 L 32.0 -19.6" stroke="var(--color-text)" stroke-width="17.2" fill="none" stroke-linejoin="round"/>
+            <!-- Y stem -->
+            <path d="M 154.6 7.0 L 50.5 282.4" stroke="var(--color-text)" stroke-width="17.2" fill="none"/>
+          </g>
           <!-- YAEGER wordmark -->
           <text x="22" y="272" font-family="'Satoshi', 'Helvetica Neue', sans-serif" font-size="26" font-weight="700" letter-spacing="0.32em" fill="var(--color-text)">YAEGER</text>
           <!-- GROUP wordmark -->
