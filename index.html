@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="./style.css">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='24' font-size='24' font-family='serif'>Y</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240' fill='none'%3E%3Cpath d='M128 8L148 8L228 230L78 230L78 210L200 210L136 28Z' fill='%23c8782a'/%3E%3Cpath d='M182 128L182 148L132 148L132 128Z' fill='%23c8782a'/%3E%3Cpath d='M8 8L32 8L94 110L94 230L70 230L70 110Z' fill='%232a2a2a'/%3E%3Cpath d='M140 8L164 8L94 110L70 110Z' fill='%232a2a2a'/%3E%3C/svg%3E">
 </head>
 <body>
 
@@ -28,11 +28,12 @@
   <header class="header" id="header">
     <div class="header-inner">
       <a href="#" class="logo-link" aria-label="Yaeger Group — home">
-        <!-- SVG Logo: stylized Y/G monogram inspired by existing brand mark -->
-        <svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M20 15 L50 55 L80 15" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <line x1="50" y1="55" x2="50" y2="82" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
-          <path d="M58 52 L78 52 L78 82 L50 82" stroke="var(--color-primary)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <!-- SVG Logo: Y/G monogram matching the Yaeger Group brand mark -->
+        <svg class="logo-mark" width="36" height="36" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M 128 8 L 148 8 L 228 230 L 78 230 L 78 210 L 200 210 L 136 28 Z" fill="var(--color-primary)"/>
+          <path d="M 182 128 L 182 148 L 132 148 L 132 128 Z" fill="var(--color-primary)"/>
+          <path class="logo-y" d="M 8 8 L 32 8 L 94 110 L 94 230 L 70 230 L 70 110 Z" fill="var(--color-text)"/>
+          <path class="logo-y" d="M 140 8 L 164 8 L 94 110 L 70 110 Z" fill="var(--color-text)"/>
         </svg>
         <span class="logo-text">Yaeger Group</span>
       </a>
@@ -75,6 +76,21 @@
   <!-- ===== HERO ===== -->
   <main id="main">
     <section class="hero">
+      <div class="hero-logo" aria-hidden="true">
+        <!-- Full logo mark with wordmark, matching the Yaeger Group brand -->
+        <svg class="hero-logo-svg" width="160" height="200" viewBox="0 0 240 310" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- G shape (behind Y) -->
+          <path d="M 128 8 L 148 8 L 228 230 L 78 230 L 78 210 L 200 210 L 136 28 Z" fill="var(--color-primary)"/>
+          <path d="M 182 128 L 182 148 L 132 148 L 132 128 Z" fill="var(--color-primary)"/>
+          <!-- Y shape (in front) -->
+          <path d="M 8 8 L 32 8 L 94 110 L 94 230 L 70 230 L 70 110 Z" fill="var(--color-text)"/>
+          <path d="M 140 8 L 164 8 L 94 110 L 70 110 Z" fill="var(--color-text)"/>
+          <!-- YAEGER wordmark -->
+          <text x="22" y="272" font-family="'Satoshi', 'Helvetica Neue', sans-serif" font-size="26" font-weight="700" letter-spacing="0.32em" fill="var(--color-text)">YAEGER</text>
+          <!-- GROUP wordmark -->
+          <text x="50" y="296" font-family="'Satoshi', 'Helvetica Neue', sans-serif" font-size="18" font-weight="400" letter-spacing="0.48em" fill="var(--color-text-faint)">GROUP</text>
+        </svg>
+      </div>
       <p class="hero-overline">Psychotherapy &middot; Consulting &middot; Advisory</p>
       <h1>Independent judgment for consequential moments</h1>
       <p class="hero-subtitle">Edward Yaeger is a licensed clinical psychotherapist, business and organizational consultant, and vocational advisor. The work is private, individualized, and not designed to scale.</p>
