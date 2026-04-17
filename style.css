@@ -393,37 +393,38 @@ a:hover {
   margin-inline: auto;
 }
 
-.section-divider {
+.section-divider-svg {
   width: 48px;
   height: 20px;
   margin-bottom: var(--space-6);
-  background: none;
-  position: relative;
+  display: block;
+  overflow: visible;
 }
 
-.section-divider::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 0;
-  border-top: 1px solid var(--color-primary);
-  transform: rotate(-24deg);
-  transform-origin: left center;
+.divider-stroke {
+  stroke-dasharray: 52;
+  stroke-dashoffset: 52;
+  transition: stroke-dashoffset 0s;
 }
 
-.section-divider::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  width: 32px;
-  height: 0;
-  border-top: 1px solid var(--color-primary);
-  transform: rotate(24deg);
-  transform-origin: left center;
-  opacity: 0.5;
+/* Draw-on animation for browsers that support scroll-driven animations */
+@supports (animation-timeline: scroll()) {
+  .divider-stroke {
+    animation: divider-draw linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 60%;
+  }
+}
+
+/* Fallback: just show the strokes immediately for browsers without support */
+@supports not (animation-timeline: scroll()) {
+  .divider-stroke {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes divider-draw {
+  to { stroke-dashoffset: 0; }
 }
 
 .section-label {
@@ -898,9 +899,8 @@ a:hover {
   color: #d4944e;
 }
 
-.contact--dark .section-divider::before,
-.contact--dark .section-divider::after {
-  border-top-color: #d4944e;
+.contact--dark .section-divider-svg .divider-stroke {
+  stroke: #d4944e;
 }
 
 .contact--dark .contact-title {
@@ -929,7 +929,7 @@ a:hover {
   text-align: center;
 }
 
-.contact .section-divider {
+.contact .section-divider-svg {
   margin-inline: auto;
 }
 
