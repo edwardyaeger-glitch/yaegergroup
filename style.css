@@ -650,11 +650,6 @@ a:hover {
   margin-top: var(--space-10);
   padding-top: var(--space-8);
   border-top: 1px solid var(--color-divider);
-  text-align: center;
-}
-
-.emotion-cycle .fee-summary-label {
-  text-align: center;
 }
 
 .emotion-cycle-subtitle {
@@ -667,8 +662,7 @@ a:hover {
 }
 
 .emotion-cycle-visual {
-  max-width: 360px;
-  margin-inline: auto;
+  max-width: 340px;
 }
 
 .emotion-cycle-svg {
@@ -682,7 +676,6 @@ a:hover {
   font-style: italic;
   color: var(--color-primary);
   margin-top: var(--space-6);
-  text-align: center;
 }
 
 /* ===== ADVISORY SUB-SECTIONS ===== */
