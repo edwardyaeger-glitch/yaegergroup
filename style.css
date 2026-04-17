@@ -645,6 +645,46 @@ a:hover {
   line-height: 1.7;
 }
 
+/* ===== EMOTION PROCESSING CYCLE ===== */
+.emotion-cycle {
+  margin-top: var(--space-10);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-divider);
+  text-align: center;
+}
+
+.emotion-cycle .fee-summary-label {
+  text-align: center;
+}
+
+.emotion-cycle-subtitle {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+  margin-bottom: var(--space-8);
+}
+
+.emotion-cycle-visual {
+  max-width: 360px;
+  margin-inline: auto;
+}
+
+.emotion-cycle-svg {
+  width: 100%;
+  height: auto;
+}
+
+.emotion-cycle-note {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--color-primary);
+  margin-top: var(--space-6);
+  text-align: center;
+}
+
 /* ===== ADVISORY SUB-SECTIONS ===== */
 .advisory-profiles,
 .advisory-distinction,
