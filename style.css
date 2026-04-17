@@ -576,6 +576,51 @@ a:hover {
   font-style: italic;
 }
 
+/* ===== PULL QUOTES ===== */
+.pull-quote {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 1.35;
+  text-align: center;
+  margin: var(--space-12) calc(var(--space-8) * -1);
+  padding: var(--space-10) var(--space-8);
+  position: relative;
+}
+
+.pull-quote::before,
+.pull-quote::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: var(--color-primary);
+  margin: 0 auto;
+  opacity: 0.5;
+}
+
+.pull-quote::before {
+  margin-bottom: var(--space-8);
+}
+
+.pull-quote::after {
+  margin-top: var(--space-8);
+}
+
+@media (max-width: 767px) {
+  .pull-quote {
+    margin-left: 0;
+    margin-right: 0;
+    font-size: var(--text-lg);
+  }
+}
+
+/* ===== ALT SECTION BACKGROUND ===== */
+.service-detail--alt {
+  background: var(--color-surface-offset);
+}
+
 /* ===== FEE SUMMARY ===== */
 .fee-summary {
   margin-top: var(--space-10);
@@ -844,6 +889,40 @@ a:hover {
   background: var(--color-surface-offset);
 }
 
+.contact--dark {
+  background: #1e1c18;
+  border-top: none;
+}
+
+.contact--dark .section-label {
+  color: #d4944e;
+}
+
+.contact--dark .section-divider::before,
+.contact--dark .section-divider::after {
+  border-top-color: #d4944e;
+}
+
+.contact--dark .contact-title {
+  color: #d4d0c8;
+}
+
+.contact--dark .contact-body {
+  color: #8a867e;
+}
+
+.contact--dark .contact-method {
+  color: #d4d0c8;
+}
+
+.contact--dark .contact-method:hover {
+  color: #d4944e;
+}
+
+.contact--dark .contact-note {
+  color: #5a5650;
+}
+
 .contact-inner {
   max-width: var(--content-narrow);
   margin-inline: auto;
@@ -907,7 +986,13 @@ a:hover {
 /* ===== FOOTER ===== */
 .footer {
   padding: var(--space-8) var(--space-6);
-  border-top: 1px solid var(--color-divider);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: #1e1c18;
+}
+
+.footer-left {
+  font-size: var(--text-xs);
+  color: #5a5650;
 }
 
 .footer-inner {
@@ -918,11 +1003,6 @@ a:hover {
   align-items: center;
   gap: var(--space-4);
   flex-wrap: wrap;
-}
-
-.footer-left {
-  font-size: var(--text-xs);
-  color: var(--color-text-faint);
 }
 
 .footer-right {
