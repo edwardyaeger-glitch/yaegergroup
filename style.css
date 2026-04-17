@@ -654,9 +654,10 @@ a:hover {
 
 .emotion-cycle-img {
   width: 100%;
-  max-width: 780px;
+  max-width: 960px;
   height: auto;
   border-radius: 4px;
+  display: block;
 }
 
 /* ===== ADVISORY SUB-SECTIONS ===== */
