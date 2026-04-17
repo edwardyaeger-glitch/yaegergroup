@@ -775,6 +775,146 @@ a:hover {
   margin-bottom: var(--space-6);
 }
 
+/* ===== BURNOUT INFOGRAPHIC CARDS ===== */
+.burnout-infographic {
+  margin-top: var(--space-10);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-divider);
+}
+
+.burnout-infographic > p {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 52ch;
+}
+
+.burnout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.burnout-card {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.burnout-card-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.burnout-icon {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+}
+
+.burnout-label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.burnout-cognitive .burnout-label,
+.burnout-cognitive .burnout-icon { color: #7c91a6; }
+.burnout-physical .burnout-label,
+.burnout-physical .burnout-icon { color: var(--color-primary); }
+.burnout-emotional .burnout-label,
+.burnout-emotional .burnout-icon { color: #a07a92; }
+.burnout-behavioral .burnout-label,
+.burnout-behavioral .burnout-icon { color: #8a9b7a; }
+
+.burnout-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-text);
+}
+
+.burnout-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.burnout-list li {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  padding-left: 1.25em;
+  position: relative;
+}
+
+.burnout-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-divider);
+}
+
+.burnout-footer {
+  margin-top: var(--space-6);
+  padding: var(--space-6);
+  background: var(--color-surface-offset);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-divider);
+}
+
+.burnout-footer-heading {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--color-text);
+  max-width: 42ch;
+}
+
+.burnout-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.burnout-actions p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-sm);
+  line-height: 1.5;
+}
+
+.burnout-disclaimer {
+  margin-top: var(--space-4);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+@media (max-width: 767px) {
+  .burnout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== GREY MATTER CALLOUT ===== */
 .grey-matter-callout a {
   color: var(--color-primary);
