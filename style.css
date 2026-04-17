@@ -650,19 +650,21 @@ a:hover {
   margin-top: var(--space-10);
   padding-top: var(--space-8);
   border-top: 1px solid var(--color-divider);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
 }
 
-.emotion-cycle-subtitle {
-  font-family: var(--font-display);
-  font-size: var(--text-sm);
-  font-style: italic;
-  color: var(--color-text-muted);
-  margin-top: var(--space-1);
-  margin-bottom: var(--space-8);
+@media (min-width: 768px) {
+  .emotion-cycle {
+    grid-template-columns: 280px 1fr;
+    gap: var(--space-10);
+    align-items: center;
+  }
 }
 
 .emotion-cycle-visual {
-  max-width: 340px;
+  max-width: 280px;
 }
 
 .emotion-cycle-svg {
@@ -670,12 +672,29 @@ a:hover {
   height: auto;
 }
 
+.emotion-cycle-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.emotion-cycle-text .fee-summary-label {
+  margin-bottom: var(--space-1);
+}
+
+.emotion-cycle-subtitle {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
 .emotion-cycle-note {
   font-family: var(--font-display);
   font-size: var(--text-sm);
   font-style: italic;
   color: var(--color-primary);
-  margin-top: var(--space-6);
+  margin-top: var(--space-4);
 }
 
 /* ===== ADVISORY SUB-SECTIONS ===== */
