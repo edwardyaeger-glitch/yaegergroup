@@ -751,6 +751,40 @@ a:hover {
   margin-bottom: var(--space-6);
 }
 
+/* ===== GREY MATTER CALLOUT ===== */
+.grey-matter-callout a {
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.grey-matter-callout a:hover {
+  border-bottom-color: var(--color-primary);
+}
+
+.grey-matter-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+}
+
+.grey-matter-links a {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.grey-matter-links a:hover {
+  opacity: 0.75;
+  border-bottom: none;
+}
+
 /* ===== ABOUT ===== */
 .about {
   background: var(--color-surface);
