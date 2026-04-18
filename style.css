@@ -1003,6 +1003,15 @@ a:hover {
   line-height: 1.5;
   text-align: center;
 }
+.heatmap-copyright {
+  margin-top: 0.3rem;
+  font-size: 0.4rem;
+  color: var(--color-text-faint);
+  grid-column: 1 / -1;
+  font-style: italic;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
 
 /* responsive */
 @media (max-width: 1040px) {
