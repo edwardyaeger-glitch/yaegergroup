@@ -996,11 +996,12 @@ a:hover {
 }
 .heatmap-tiny {
   margin-top: 0.8rem;
-  font-size: 0.7rem;
+  font-size: 0.55rem;
   color: var(--color-text-faint);
   grid-column: 1 / -1;
   font-style: italic;
   line-height: 1.5;
+  text-align: center;
 }
 
 /* responsive */
