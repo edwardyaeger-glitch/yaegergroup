@@ -1005,7 +1005,7 @@ a:hover {
 }
 .heatmap-copyright {
   margin-top: 0.3rem;
-  font-size: 0.4rem;
+  font-size: 0.28rem;
   color: var(--color-text-faint);
   grid-column: 1 / -1;
   font-style: italic;
