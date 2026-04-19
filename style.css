@@ -282,6 +282,7 @@ a:hover {
   text-align: center;
   padding: var(--space-12) var(--space-6) var(--space-12);
   position: relative;
+  background: linear-gradient(180deg, var(--color-bg) 0%, color-mix(in srgb, var(--color-bg) 94%, #e8ddd0) 100%);
 }
 
 .hero-logo {
@@ -537,6 +538,17 @@ a:hover {
 }
 .tab-panel.active {
   display: block;
+}
+
+/* Drop caps */
+.tab-panel .service-detail-content > p:first-child::first-letter {
+  font-family: var(--font-display);
+  font-size: 3.4em;
+  float: left;
+  line-height: 0.8;
+  padding-right: 0.08em;
+  padding-top: 0.05em;
+  color: var(--color-text);
 }
 
 /* ===== TAB BOTTOM NAV ===== */
@@ -1149,8 +1161,52 @@ a:hover {
   border-bottom: 1px solid var(--color-divider);
 }
 
+.about-credential-pullout {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 1.35;
+  margin-bottom: var(--space-8);
+  max-width: 28ch;
+  border-left: 2px solid var(--color-primary);
+  padding-left: var(--space-5);
+}
+
 .about-portrait {
   margin-bottom: var(--space-8);
+  position: relative;
+  display: inline-block;
+}
+
+.about-portrait::before,
+.about-portrait::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.about-portrait::before {
+  top: -6px;
+  left: -6px;
+  border-top: 2px solid var(--color-primary);
+  border-left: 2px solid var(--color-primary);
+}
+
+.about-portrait::after {
+  bottom: -6px;
+  right: calc(100% - 320px - 6px);
+  border-bottom: 2px solid var(--color-primary);
+  border-right: 2px solid var(--color-primary);
+}
+
+@media (max-width: 767px) {
+  .about-portrait::after {
+    right: -6px;
+  }
 }
 
 .about-portrait img {
@@ -1354,6 +1410,18 @@ a:hover {
   color: var(--color-text-muted);
   line-height: 1.7;
   margin-bottom: var(--space-8);
+}
+
+.contact-method svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  padding: 10px;
+  box-sizing: content-box;
+  border-radius: var(--radius-full);
+  background: rgba(212, 148, 78, 0.12);
 }
 
 .contact-methods {
