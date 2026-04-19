@@ -1576,6 +1576,10 @@ a:hover {
   color: #d4944e;
 }
 
+.contact--dark .contact-qualifier {
+  color: #6a665e;
+}
+
 .contact--dark .contact-note {
   color: #5a5650;
 }
@@ -1627,6 +1631,13 @@ a:hover {
   font-size: var(--text-base);
   color: var(--color-text-muted);
   line-height: 1.7;
+  margin-bottom: var(--space-4);
+}
+
+.contact-qualifier {
+  font-size: var(--text-sm);
+  color: var(--color-text-faint);
+  letter-spacing: 0.04em;
   margin-bottom: var(--space-8);
 }
 
