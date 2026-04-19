@@ -356,6 +356,27 @@ a:hover {
   border-color: var(--color-text);
 }
 
+/* Hero quote card */
+.hero-quote-card {
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-10);
+  padding: var(--space-5) var(--space-8);
+  border: 1px solid var(--color-divider);
+  border-left: 2px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  max-width: 44ch;
+  background: var(--color-surface);
+}
+
+.hero-quote-card p {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-style: italic;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
 .hero-scroll {
   position: absolute;
   bottom: var(--space-8);
