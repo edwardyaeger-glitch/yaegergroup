@@ -464,57 +464,43 @@ a:hover {
   padding-bottom: var(--space-16);
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-4);
+/* ===== TAB STRIP ===== */
+.tab-header {
+  max-width: var(--content-default);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
 }
 
-@media (min-width: 768px) {
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-8);
-  }
+.tab-strip {
+  display: flex;
+  gap: var(--space-6);
+  border-bottom: 1px solid var(--color-divider);
+  padding-bottom: 0;
+  margin-top: var(--space-6);
 }
 
-.service-card {
-  padding: var(--space-6);
-  background: none;
-  border: 1px solid var(--color-divider);
-  border-radius: 2px;
-  cursor: pointer;
-  text-align: left;
-  font-family: inherit;
-  transition: border-color 0.3s ease, background 0.3s ease;
-}
-.service-card:hover {
-  border-color: var(--color-primary);
-}
-.service-card.active {
-  border-color: var(--color-primary);
-  background: var(--color-surface-offset);
-}
-
-.service-card-num {
-  font-family: var(--font-display);
-  font-size: var(--text-lg);
-  color: var(--color-primary);
-  margin-bottom: var(--space-3);
-  font-style: italic;
-}
-
-.service-card h3 {
-  font-family: var(--font-display);
-  font-size: var(--text-lg);
-  font-weight: 400;
-  color: var(--color-text);
-  margin-bottom: var(--space-4);
-}
-
-.service-card p {
-  font-size: var(--text-base);
+.tab-btn {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
   color: var(--color-text-muted);
-  line-height: 1.7;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: var(--space-3) 0;
+  margin-bottom: -1px;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tab-btn:hover {
+  color: var(--color-text);
+}
+
+.tab-btn.active {
+  color: var(--color-text);
+  border-bottom-color: var(--color-primary);
 }
 
 /* ===== TAB PANELS ===== */
@@ -525,7 +511,7 @@ a:hover {
 }
 .tab-panel {
   display: none;
-  padding-top: var(--space-12);
+  padding-top: var(--space-10);
 }
 .tab-panel.active {
   display: block;
