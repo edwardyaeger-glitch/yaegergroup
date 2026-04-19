@@ -144,6 +144,14 @@
               <p class="emphasis">This is not HR consulting. It is executive-level work on how people actually think, feel, relate, and perform inside complex organizations.</p>
             </div>
 
+            <div class="tab-nav-bottom">
+              <span class="tab-nav-bottom-label">Continue reading</span>
+              <div class="tab-nav-bottom-links">
+                <button class="tab-nav-bottom-btn" data-tab="advisory">Advisory</button>
+                <button class="tab-nav-bottom-btn" data-tab="psychotherapy">Psychotherapy</button>
+              </div>
+            </div>
+
             </div>
           </div>
         </div>
@@ -213,6 +221,14 @@
               </ul>
 
               <p>Engagements are typically short- to medium-term retainers focused on individual development while remaining aligned with organizational goals and governance. Conversations begin by clarifying scope, goals, governance, and fit.</p>
+            </div>
+
+            <div class="tab-nav-bottom">
+              <span class="tab-nav-bottom-label">Continue reading</span>
+              <div class="tab-nav-bottom-links">
+                <button class="tab-nav-bottom-btn" data-tab="consulting">Consulting</button>
+                <button class="tab-nav-bottom-btn" data-tab="psychotherapy">Psychotherapy</button>
+              </div>
             </div>
 
             <!-- ===== BURNOUT HEATMAP ===== -->
@@ -376,6 +392,14 @@
                 <a href="https://www.greymattercounseling.com/blog/meet-edward" target="_blank" rel="noopener">Meet Edward &rarr;</a>
                 <a href="https://www.greymattercounseling.com/blog/working-with-the-lgbtqia-community" target="_blank" rel="noopener">Working with the LGBTQIA+ Community &rarr;</a>
               </p>
+            </div>
+
+            <div class="tab-nav-bottom">
+              <span class="tab-nav-bottom-label">Continue reading</span>
+              <div class="tab-nav-bottom-links">
+                <button class="tab-nav-bottom-btn" data-tab="consulting">Consulting</button>
+                <button class="tab-nav-bottom-btn" data-tab="advisory">Advisory</button>
+              </div>
             </div>
 
             </div>
@@ -582,6 +606,18 @@
     // Tab card clicks
     document.querySelectorAll('[role="tab"]').forEach(tab => {
       tab.addEventListener('click', () => activateTab(tab.id));
+    });
+
+    // Bottom tab nav buttons
+    document.querySelectorAll('.tab-nav-bottom-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tabId = 'tab-' + btn.getAttribute('data-tab');
+        activateTab(tabId);
+        const tabStrip = document.querySelector('.tab-strip');
+        if (tabStrip) {
+          tabStrip.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
     });
 
     // Smooth scroll for anchor links + tab activation
