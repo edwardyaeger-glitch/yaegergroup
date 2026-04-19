@@ -372,6 +372,7 @@ a:hover {
   padding: var(--space-5) var(--space-8);
   border: 1px solid var(--color-divider);
   border-left: 2px solid var(--color-primary);
+  border-top: 1px solid var(--color-primary);
   border-radius: var(--radius-sm);
   max-width: 44ch;
   background: var(--color-surface);
@@ -706,6 +707,33 @@ a:hover {
   border-left: 2px solid var(--color-primary);
   margin: var(--space-8) 0;
   font-style: italic;
+  position: relative;
+}
+
+.service-detail-content blockquote::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.35em;
+  left: calc(var(--space-6) + 0.05em);
+  font-family: var(--font-display);
+  font-size: 3.5em;
+  color: var(--color-primary);
+  opacity: 0.12;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.advisory-track blockquote::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.35em;
+  left: calc(var(--space-6) + 0.05em);
+  font-family: var(--font-display);
+  font-size: 3.5em;
+  color: var(--color-primary);
+  opacity: 0.12;
+  line-height: 1;
+  pointer-events: none;
 }
 
 /* ===== SIDEBAR PULL QUOTES ===== */
@@ -776,11 +804,70 @@ a:hover {
   background: var(--color-surface-offset);
 }
 
+/* ===== SECTION INTERSTITIAL ===== */
+.section-interstitial {
+  text-align: center;
+  padding: var(--space-4) var(--space-6);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  opacity: 0.35;
+}
+
 /* ===== FEE SUMMARY ===== */
 .fee-summary {
   margin-top: var(--space-10);
   padding-top: var(--space-8);
   border-top: 1px solid var(--color-divider);
+}
+
+.fee-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin: var(--space-6) 0;
+  max-width: 400px;
+}
+
+.fee-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-5);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.fee-card-type {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.fee-card-rate {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.fee-card-detail {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+.fee-note {
+  font-size: var(--text-sm) !important;
+  color: var(--color-text-muted) !important;
+  line-height: 1.7;
+  max-width: 60ch;
 }
 
 .fee-summary-label {
@@ -922,6 +1009,7 @@ a:hover {
   font-style: italic;
   line-height: 1.6;
   color: var(--color-text);
+  position: relative;
 }
 
 .advisory-track .advisory-list {
@@ -1397,6 +1485,11 @@ a:hover {
 /* ===== WRITING / SUBSTACK ===== */
 .writing {
   border-bottom: 1px solid var(--color-divider);
+  background: color-mix(in srgb, var(--color-surface-offset) 60%, #ebe5da);
+}
+
+[data-theme="dark"] .writing {
+  background: var(--color-surface-offset);
 }
 
 .writing-layout {
@@ -1697,6 +1790,40 @@ a:hover {
   }
 }
 
+/* ===== SCROLL TO TOP ===== */
+.scroll-top {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
+  transform: translateY(8px);
+  z-index: 40;
+  box-shadow: var(--shadow-md);
+}
+
+.scroll-top.visible {
+  opacity: 0.7;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scroll-top:hover {
+  opacity: 1;
+  background: var(--color-primary-hover);
+}
+
 /* ===== PRINT STYLESHEET ===== */
 @media print {
   /* Hide non-essential elements */
@@ -1751,7 +1878,9 @@ a:hover {
     margin-top: 1rem;
   }
 
-  .tab-strip {
+  .tab-strip,
+  .scroll-top,
+  .section-interstitial {
     display: none;
   }
 

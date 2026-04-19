@@ -400,7 +400,19 @@
 
             <div class="fee-summary">
               <p class="fee-summary-label">Fees</p>
-              <p>Individual sessions are 50 minutes at a standard rate of $250. Couples and family sessions are 60 minutes at $375. The practice is private-pay; insurance is not billed directly. Superbills are provided for out-of-network reimbursement. Sliding-scale and other fee structures are offered on a case-by-case basis.</p>
+              <div class="fee-cards">
+                <div class="fee-card">
+                  <span class="fee-card-type">Individual</span>
+                  <span class="fee-card-rate">$250</span>
+                  <span class="fee-card-detail">50 minutes</span>
+                </div>
+                <div class="fee-card">
+                  <span class="fee-card-type">Couples &amp; Family</span>
+                  <span class="fee-card-rate">$375</span>
+                  <span class="fee-card-detail">60 minutes</span>
+                </div>
+              </div>
+              <p class="fee-note">The practice is private-pay; insurance is not billed directly. Superbills are provided for out-of-network reimbursement. Sliding-scale and other fee structures are offered on a case-by-case basis.</p>
             </div>
 
             <!-- ===== GREY MATTER ===== -->
@@ -430,6 +442,7 @@
       </div><!-- /.tab-panels -->
     </section><!-- /#services -->
 
+    <div class="section-interstitial" aria-hidden="true">Yaeger Group</div>
 
     <!-- ===== ABOUT ===== -->
     <section class="section about" id="about">
@@ -495,9 +508,10 @@
       </div>
     </section>
 
+    <div class="section-interstitial" aria-hidden="true">Yaeger Group</div>
 
     <!-- ===== WRITING ===== -->
-    <section class="section writing service-detail--alt" id="writing">
+    <section class="section writing" id="writing">
       <div class="section-inner">
         <div class="writing-layout">
           <div>
@@ -554,12 +568,16 @@
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="footer-inner">
-      <p class="footer-left">&copy; 2026 Yaeger Group. New York.</p>
+      <p class="footer-left">&copy; <span id="footer-year">2026</span> Yaeger Group. New York.</p>
       <div class="footer-right">
       </div>
     </div>
   </footer>
 
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
 
   <script>
     // Dark mode toggle
@@ -684,6 +702,20 @@
         observer.observe(el);
       });
     }
+
+    // Scroll to top button
+    (function() {
+      const btn = document.getElementById('scrollTop');
+      window.addEventListener('scroll', () => {
+        btn.classList.toggle('visible', window.scrollY > 600);
+      }, { passive: true });
+      btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+
+    // Auto-update copyright year
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
