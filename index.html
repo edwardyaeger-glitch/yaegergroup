@@ -41,10 +41,10 @@
       </a>
 
       <nav class="nav-desktop" aria-label="Primary navigation">
-        <a href="#services">Services</a>
-        <a href="#consulting">Consulting</a>
-        <a href="#advisory">Advisory</a>
-        <a href="#psychotherapy">Psychotherapy</a>
+        <a href="#services">The Work</a>
+        <a href="#services" data-tab="tab-consulting">Consulting</a>
+        <a href="#services" data-tab="tab-advisory">Advisory</a>
+        <a href="#services" data-tab="tab-psychotherapy">Psychotherapy</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
         <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
@@ -63,10 +63,10 @@
     <button class="nav-mobile-close" id="navMobileClose" aria-label="Close menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
-    <a href="#services" onclick="closeMenu()">Services</a>
-    <a href="#consulting" onclick="closeMenu()">Consulting</a>
-    <a href="#advisory" onclick="closeMenu()">Advisory</a>
-    <a href="#psychotherapy" onclick="closeMenu()">Psychotherapy</a>
+    <a href="#services" onclick="closeMenu()">The Work</a>
+    <a href="#services" data-tab="tab-consulting" onclick="closeMenu()">Consulting</a>
+    <a href="#services" data-tab="tab-advisory" onclick="closeMenu()">Advisory</a>
+    <a href="#services" data-tab="tab-psychotherapy" onclick="closeMenu()">Psychotherapy</a>
     <a href="#about" onclick="closeMenu()">About</a>
     <a href="#contact" onclick="closeMenu()">Contact</a>
     <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode" style="margin-top: var(--space-4);">
@@ -81,51 +81,44 @@
       <p class="hero-overline">Consulting &middot; Advisory &middot; Psychotherapy</p>
       <h1>Independent judgment for consequential moments</h1>
       <p class="hero-subtitle">I am a business and organizational consultant, a vocational advisor, and a licensed clinical psychotherapist. The work I do is private, individualized, and not designed to scale.</p>
-      <a href="#contact" class="hero-cta">Begin a conversation <span aria-hidden="true">&rarr;</span></a>
+
       <div class="hero-scroll" aria-hidden="true">
         <div class="hero-scroll-line"></div>
       </div>
     </section>
 
 
-    <!-- ===== SERVICES OVERVIEW ===== -->
+    <!-- ===== THE WORK (TABBED) ===== -->
     <section class="section services-intro" id="services">
       <div class="section-wide">
         <svg class="section-divider-svg fade-in" width="48" height="20" viewBox="0 0 48 20" fill="none" aria-hidden="true"><line class="divider-stroke" x1="0" y1="10" x2="48" y2="0" stroke="var(--color-primary)" stroke-width="1"/><line class="divider-stroke" x1="10" y1="10" x2="42" y2="20" stroke="var(--color-primary)" stroke-width="1" opacity="0.5"/></svg>
         <p class="section-label fade-in">The Work</p>
-        <div class="services-grid">
-          <div class="service-card fade-in">
+        <div class="services-grid" role="tablist" aria-label="Services">
+          <button class="service-card fade-in active" role="tab" aria-selected="true" aria-controls="panel-consulting" id="tab-consulting">
             <p class="service-card-num">i.</p>
             <h3>Business &amp; Organizational Consulting</h3>
             <p>Independent and multidimensional judgment for leaders and organizations when existing structures and salves are no longer sufficient.</p>
-            <a href="#consulting" class="service-link">Read more <span aria-hidden="true">&rarr;</span></a>
-          </div>
-          <div class="service-card fade-in">
+          </button>
+          <button class="service-card fade-in" role="tab" aria-selected="false" aria-controls="panel-advisory" id="tab-advisory">
             <p class="service-card-num">ii.</p>
             <h3>Advisory</h3>
             <p>Structured, goal-oriented engagements for professionals working through career transitions, leadership challenges, or decisions that shape their direction.</p>
-            <a href="#advisory" class="service-link">Read more <span aria-hidden="true">&rarr;</span></a>
-          </div>
-          <div class="service-card fade-in">
+          </button>
+          <button class="service-card fade-in" role="tab" aria-selected="false" aria-controls="panel-psychotherapy" id="tab-psychotherapy">
             <p class="service-card-num">iii.</p>
             <h3>Psychotherapy</h3>
             <p>Licensed clinical psychotherapy for adults navigating complexity, transition, and the quieter forms of distress that resist easy categorization.</p>
-            <a href="#psychotherapy" class="service-link">Read more <span aria-hidden="true">&rarr;</span></a>
-          </div>
+          </button>
         </div>
       </div>
-    </section>
 
+      <!-- Tab panels -->
+      <div class="tab-panels">
 
-    <!-- ===== CONSULTING ===== -->
-    <section class="section service-detail" id="consulting">
-      <div class="service-detail-inner">
-        <div class="service-detail-layout">
-          <div class="service-detail-sidebar">
-            <svg class="section-divider-svg" width="48" height="20" viewBox="0 0 48 20" fill="none" aria-hidden="true"><line class="divider-stroke" x1="0" y1="10" x2="48" y2="0" stroke="var(--color-primary)" stroke-width="1"/><line class="divider-stroke" x1="10" y1="10" x2="42" y2="20" stroke="var(--color-primary)" stroke-width="1" opacity="0.5"/></svg>
-            <div class="section-label">Business &amp; Organizational Consulting</div>
-          </div>
-          <div class="service-detail-content fade-in">
+        <!-- ===== CONSULTING PANEL ===== -->
+        <div class="tab-panel active" role="tabpanel" id="panel-consulting" aria-labelledby="tab-consulting">
+          <div class="service-detail-inner">
+            <div class="service-detail-content fade-in">
             <p>There are moments when something important is not working, yet nothing is ostensibly &ldquo;broken.&rdquo; Decisions drag. Conversations repeat. People perform competence while carefully avoiding what actually needs to be addressed. The organization keeps moving, but judgment erodes and trust ebbs. Everyone feels it, but no one quite names it, primarily out of fear.</p>
 
             <p>For most people in an organization, guidance exists. Managers look to senior managers. Senior managers look to executives, who draw on boards of directors and advisors, management consultancies, attorneys, and, when necessary, public-facing counsel. In many situations, that ecosystem is sufficient. But when the issue is personal, politically sensitive, or psychologically complex, it often is not. That is where I come in.</p>
@@ -163,21 +156,14 @@
               <p class="emphasis">This is not HR consulting. It is executive-level work on how people actually think, feel, relate, and perform inside complex organizations.</p>
             </div>
 
+            </div>
           </div>
         </div>
-      </div>
-    </section>
 
-
-    <!-- ===== ADVISORY ===== -->
-    <section class="section service-detail service-detail--alt" id="advisory">
-      <div class="service-detail-inner">
-        <div class="service-detail-layout">
-          <div class="service-detail-sidebar">
-            <svg class="section-divider-svg" width="48" height="20" viewBox="0 0 48 20" fill="none" aria-hidden="true"><line class="divider-stroke" x1="0" y1="10" x2="48" y2="0" stroke="var(--color-primary)" stroke-width="1"/><line class="divider-stroke" x1="10" y1="10" x2="42" y2="20" stroke="var(--color-primary)" stroke-width="1" opacity="0.5"/></svg>
-            <div class="section-label">Advisory</div>
-          </div>
-          <div class="service-detail-content fade-in">
+        <!-- ===== ADVISORY PANEL ===== -->
+        <div class="tab-panel" role="tabpanel" id="panel-advisory" aria-labelledby="tab-advisory" hidden>
+          <div class="service-detail-inner">
+            <div class="service-detail-content fade-in">
             <p>Advisory is a structured, goal-oriented engagement focused on career, vocation, and professional direction. It draws on the same relational depth as clinical work, but the scope is different. We are not treating a diagnosis. We are working through a challenge, building toward a specific outcome, or pressure-testing a decision.</p>
 
 
@@ -209,7 +195,7 @@
 
               <p>I work with individuals whose professional lives are highly visible, tightly managed, and consequential: artists, performers, leaders, and public figures whose decisions ripple outward to teams, organizations, and audiences. At that level, many familiar forms of guidance stop being useful. Not because they are incompetent, but because they are structurally unsuited to the realities involved.</p>
 
-              <blockquote>Keep the rigor of the therapist. Remove the emotional bias of loved ones. Account for the structural incentives that shape agency relationships. What remains is the need for an independent, trusted advisor.</blockquote>
+              <blockquote>Keep the rigor of a therapist. Remove the emotional bias of loved ones. Account for the structural incentives that shape agency relationships. What remains is the need for an independent, trusted advisor.</blockquote>
 
               <p class="pull-quote">I am not an extension of a team. I am not accountable to anyone's internal (or external) hierarchy. I am engaged precisely because I am not embedded in any of it.</p>
 
@@ -347,21 +333,14 @@
               </section>
             </div>
 
+            </div>
           </div>
         </div>
-      </div>
-    </section>
 
-
-    <!-- ===== PSYCHOTHERAPY ===== -->
-    <section class="section service-detail" id="psychotherapy">
-      <div class="service-detail-inner">
-        <div class="service-detail-layout">
-          <div class="service-detail-sidebar">
-            <svg class="section-divider-svg" width="48" height="20" viewBox="0 0 48 20" fill="none" aria-hidden="true"><line class="divider-stroke" x1="0" y1="10" x2="48" y2="0" stroke="var(--color-primary)" stroke-width="1"/><line class="divider-stroke" x1="10" y1="10" x2="42" y2="20" stroke="var(--color-primary)" stroke-width="1" opacity="0.5"/></svg>
-            <div class="section-label">Psychotherapy</div>
-          </div>
-          <div class="service-detail-content fade-in">
+        <!-- ===== PSYCHOTHERAPY PANEL ===== -->
+        <div class="tab-panel" role="tabpanel" id="panel-psychotherapy" aria-labelledby="tab-psychotherapy" hidden>
+          <div class="service-detail-inner">
+            <div class="service-detail-content fade-in">
             <p>Psychotherapy requires more than training. It requires judgment, restraint, and the capacity to tolerate complexity without rushing to resolution.</p>
 
             <p>Much of what brings people into therapy is not immediately dramatic or diagnosable. It is quieter: a sense that familiar ways of coping no longer hold; that decisions feel heavier than they should; that roles once inhabited with ease now require effort or performance.</p>
@@ -396,10 +375,13 @@
                 <a href="https://www.greymattercounseling.com/blog/working-with-the-lgbtqia-community" target="_blank" rel="noopener">Working with the LGBTQIA+ Community &rarr;</a>
               </p>
             </div>
+
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+
+      </div><!-- /.tab-panels -->
+    </section><!-- /#services -->
 
 
     <!-- ===== ABOUT ===== -->
@@ -578,9 +560,39 @@
     });
     document.getElementById('navMobileClose').addEventListener('click', closeMenu);
 
-    // Smooth scroll for anchor links
+    // Tab switching
+    function activateTab(tabId) {
+      const tabs = document.querySelectorAll('[role="tab"]');
+      const panels = document.querySelectorAll('.tab-panel');
+      tabs.forEach(t => {
+        const isActive = t.id === tabId;
+        t.classList.toggle('active', isActive);
+        t.setAttribute('aria-selected', isActive);
+      });
+      panels.forEach(p => {
+        const isActive = p.id === 'panel-' + tabId.replace('tab-', '');
+        p.classList.toggle('active', isActive);
+        p.hidden = !isActive;
+        // Re-trigger fade-in for newly visible panel content
+        if (isActive) {
+          p.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '1';
+            el.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+          });
+        }
+      });
+    }
+
+    // Tab card clicks
+    document.querySelectorAll('[role="tab"]').forEach(tab => {
+      tab.addEventListener('click', () => activateTab(tab.id));
+    });
+
+    // Smooth scroll for anchor links + tab activation
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
+        const tabAttr = a.getAttribute('data-tab');
+        if (tabAttr) activateTab(tabAttr);
         const target = document.querySelector(a.getAttribute('href'));
         if (target) {
           e.preventDefault();
