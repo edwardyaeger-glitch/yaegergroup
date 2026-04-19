@@ -334,7 +334,16 @@ a:hover {
   color: var(--color-text-muted);
   max-width: 52ch;
   line-height: 1.7;
-  margin-bottom: var(--space-10);
+  margin-bottom: var(--space-6);
+}
+
+/* Hero rule line */
+.hero-rule {
+  width: 48px;
+  height: 1px;
+  background: var(--color-primary);
+  opacity: 0.45;
+  margin: 0 auto var(--space-8);
 }
 
 .hero-cta {
@@ -561,6 +570,16 @@ a:hover {
   display: block;
 }
 
+/* Tab panel number markers */
+.tab-panel-number {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  opacity: 0.5;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-4);
+}
+
 /* Drop caps */
 .tab-panel .service-detail-content > p:first-child::first-letter {
   font-family: var(--font-display);
@@ -687,6 +706,29 @@ a:hover {
   border-left: 2px solid var(--color-primary);
   margin: var(--space-8) 0;
   font-style: italic;
+}
+
+/* ===== SIDEBAR PULL QUOTES ===== */
+.sidebar-pullquote {
+  float: right;
+  width: 200px;
+  margin: 0 0 var(--space-6) var(--space-8);
+  padding-left: var(--space-5);
+  border-left: 2px solid var(--color-primary);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--color-text);
+  line-height: 1.5;
+  opacity: 0.7;
+}
+
+@media (max-width: 767px) {
+  .sidebar-pullquote {
+    float: none;
+    width: auto;
+    margin: var(--space-6) 0;
+  }
 }
 
 /* ===== PULL QUOTES ===== */
@@ -1285,6 +1327,47 @@ a:hover {
   font-style: italic;
 }
 
+/* Small caps for credential abbreviations */
+.credential-abbr {
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 0.06em;
+  font-size: 1.05em;
+}
+
+/* Education timeline dots */
+.credentials-timeline li {
+  position: relative;
+  padding-left: var(--space-5);
+}
+
+.credentials-timeline li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 7px;
+  height: 7px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  opacity: 0.6;
+}
+
+.credentials-timeline li::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: calc(50% + 7px);
+  width: 1px;
+  height: calc(100% - 2px);
+  background: var(--color-divider);
+}
+
+.credentials-timeline li:last-child::after {
+  display: none;
+}
+
 .about-links {
   display: flex;
   flex-wrap: wrap;
@@ -1404,10 +1487,31 @@ a:hover {
   color: #5a5650;
 }
 
+/* Contact watermark monogram */
+.contact-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(212, 148, 78, 0.06);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Contact divider */
+.contact-divider {
+  width: 40px;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 0;
+}
+
 .contact-inner {
   max-width: var(--content-narrow);
   margin-inline: auto;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .contact .section-divider-svg {
@@ -1590,5 +1694,100 @@ a:hover {
   .nav-mobile,
   .mobile-menu-btn {
     display: none !important;
+  }
+}
+
+/* ===== PRINT STYLESHEET ===== */
+@media print {
+  /* Hide non-essential elements */
+  .header,
+  .nav-mobile,
+  .hero-scroll,
+  .hero-monogram,
+  .hero-rule,
+  .theme-toggle,
+  .skip-link,
+  .tab-nav-bottom,
+  .contact-watermark,
+  .section-divider-svg,
+  .footer {
+    display: none !important;
+  }
+
+  /* Reset backgrounds and colors for print */
+  body {
+    background: white;
+    color: #1a1815;
+  }
+
+  .hero {
+    min-height: auto;
+    background: white;
+    padding: 2rem 0;
+  }
+
+  .section,
+  .services-intro,
+  .about,
+  .contact--dark {
+    background: white !important;
+    border: none !important;
+    padding: 1.5rem 0;
+  }
+
+  .contact--dark,
+  .contact--dark .contact-title,
+  .contact--dark .contact-body,
+  .contact--dark .contact-method,
+  .contact--dark .contact-note {
+    color: #1a1815 !important;
+  }
+
+  /* Show all tab panels */
+  .tab-panel {
+    display: block !important;
+    border-top: 1px solid #d9d5cc;
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .tab-strip {
+    display: none;
+  }
+
+  .tab-panel-number {
+    color: #935d2a;
+    opacity: 1;
+  }
+
+  /* Typography adjustments */
+  a {
+    color: #1a1815;
+    text-decoration: underline;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  /* Prevent page breaks inside content blocks */
+  .advisory-track,
+  .fee-summary,
+  blockquote,
+  .pull-quote {
+    break-inside: avoid;
+  }
+
+  /* Link URLs after external links */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #6b675f;
+    word-break: break-all;
+  }
+
+  /* Don't print URL for internal links */
+  a[href^="#"]::after {
+    content: none;
   }
 }
