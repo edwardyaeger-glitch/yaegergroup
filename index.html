@@ -145,7 +145,7 @@
             </div>
 
             <div class="tab-nav-bottom">
-              <span class="tab-nav-bottom-label">Continue reading</span>
+              <button class="tab-nav-bottom-label" data-tab="advisory">Continue reading</button>
               <div class="tab-nav-bottom-links">
                 <button class="tab-nav-bottom-btn" data-tab="advisory">Advisory</button>
                 <button class="tab-nav-bottom-btn" data-tab="psychotherapy">Psychotherapy</button>
@@ -224,7 +224,7 @@
             </div>
 
             <div class="tab-nav-bottom">
-              <span class="tab-nav-bottom-label">Continue reading</span>
+              <button class="tab-nav-bottom-label" data-tab="psychotherapy">Continue reading</button>
               <div class="tab-nav-bottom-links">
                 <button class="tab-nav-bottom-btn" data-tab="consulting">Consulting</button>
                 <button class="tab-nav-bottom-btn" data-tab="psychotherapy">Psychotherapy</button>
@@ -395,7 +395,7 @@
             </div>
 
             <div class="tab-nav-bottom">
-              <span class="tab-nav-bottom-label">Continue reading</span>
+              <button class="tab-nav-bottom-label" data-tab="consulting">Continue reading</button>
               <div class="tab-nav-bottom-links">
                 <button class="tab-nav-bottom-btn" data-tab="consulting">Consulting</button>
                 <button class="tab-nav-bottom-btn" data-tab="advisory">Advisory</button>
@@ -609,7 +609,7 @@
     });
 
     // Bottom tab nav buttons
-    document.querySelectorAll('.tab-nav-bottom-btn').forEach(btn => {
+    document.querySelectorAll('.tab-nav-bottom-btn, .tab-nav-bottom-label[data-tab]').forEach(btn => {
       btn.addEventListener('click', () => {
         const tabId = 'tab-' + btn.getAttribute('data-tab');
         activateTab(tabId);
