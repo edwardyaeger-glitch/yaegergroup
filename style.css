@@ -59,13 +59,13 @@
   /* Charcoal text */
   --color-text:           #1a1815;
   --color-text-muted:     #6b675f;
-  --color-text-faint:     #a09c94;
+  --color-text-faint:     #726d65;
   --color-text-inverse:   #faf8f4;
 
   /* Copper/bronze accent */
-  --color-primary:        #b87333;
-  --color-primary-hover:  #9a5f28;
-  --color-primary-active: #7d4c20;
+  --color-primary:        #935d2a;
+  --color-primary-hover:  #7c4e22;
+  --color-primary-active: #6d4319;
 
   /* Shadows */
   --shadow-sm: 0 1px 2px oklch(0.2 0.02 60 / 0.06);
@@ -84,7 +84,7 @@
 
   --color-text:           #d4d0c8;
   --color-text-muted:     #8a867e;
-  --color-text-faint:     #5a5650;
+  --color-text-faint:     #87837d;
   --color-text-inverse:   #1b1916;
 
   --color-primary:        #d4944e;
@@ -106,7 +106,7 @@
     --color-border:         #3a3733;
     --color-text:           #d4d0c8;
     --color-text-muted:     #8a867e;
-    --color-text-faint:     #5a5650;
+    --color-text-faint:     #87837d;
     --color-text-inverse:   #1b1916;
     --color-primary:        #d4944e;
     --color-primary-hover:  #c07f38;
