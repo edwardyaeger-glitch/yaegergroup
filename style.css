@@ -1323,6 +1323,30 @@ a:hover {
   border-bottom: 1px solid var(--color-divider);
 }
 
+.about-practice-intro {
+  max-width: 52ch;
+  margin-bottom: var(--space-16);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.about-practice-intro p {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  font-size: var(--text-base);
+  margin-bottom: var(--space-6);
+}
+
+.about-practice-intro p:first-child {
+  color: var(--color-text);
+  font-size: var(--text-lg);
+  line-height: 1.5;
+}
+
+.about-practice-intro p:last-child {
+  margin-bottom: 0;
+}
+
 .about-credential-pullout {
   font-family: var(--font-display);
   font-size: var(--text-lg);
