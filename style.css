@@ -593,7 +593,7 @@ a:hover {
 }
 
 /* Drop caps */
-.tab-panel .service-detail-content > p:first-child::first-letter {
+.tab-panel .service-detail-content > .panel-expandable > p:first-child::first-letter {
   font-family: var(--font-display);
   font-size: 3.4em;
   float: left;
