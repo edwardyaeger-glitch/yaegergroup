@@ -456,17 +456,16 @@
     document.querySelectorAll('.panel-expand-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const expandable = btn.nextElementSibling;
-        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', !isExpanded);
-        expandable.hidden = isExpanded;
-        btn.textContent = isExpanded ? 'Read more' : 'Read less';
+        expandable.hidden = false;
+        btn.setAttribute('aria-expanded', 'true');
+        btn.hidden = true;
       });
     });
 
     function collapseAllPanels() {
       document.querySelectorAll('.panel-expand-btn').forEach(btn => {
         btn.setAttribute('aria-expanded', 'false');
-        btn.textContent = 'Read more';
+        btn.hidden = false;
         const expandable = btn.nextElementSibling;
         if (expandable) expandable.hidden = true;
       });
