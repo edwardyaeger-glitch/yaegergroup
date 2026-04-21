@@ -111,6 +111,9 @@
           <div class="service-detail-inner">
             <p class="tab-panel-number" aria-hidden="true">i.</p>
             <div class="service-detail-content fade-in">
+            <p class="panel-summary">Independent judgment for leaders and organizations navigating high-stakes moments.</p>
+            <button class="panel-expand-btn" aria-expanded="false">Read more</button>
+            <div class="panel-expandable" hidden>
             <p>There are moments when something important is not working, yet nothing is ostensibly &ldquo;broken.&rdquo; Decisions drag. Conversations repeat. People perform competence while carefully avoiding what actually needs to be addressed. The organization keeps moving, but judgment erodes and trust ebbs. Everyone feels it, but no one quite names it, primarily out of fear.</p>
 
             <p>For most people in an organization, guidance exists. Managers turn to senior leaders, who draw on boards, consultancies, and counsel. In many situations, that ecosystem is sufficient. But when the issue is personal, politically sensitive, or psychologically complex, it often is not. That is where I come in.</p>
@@ -143,6 +146,7 @@
                 <button class="tab-nav-bottom-btn" data-tab="psychotherapy">Psychotherapy</button>
               </div>
             </div>
+            </div><!-- /.panel-expandable -->
 
             </div>
           </div>
@@ -153,6 +157,9 @@
           <div class="service-detail-inner">
             <p class="tab-panel-number" aria-hidden="true">ii.</p>
             <div class="service-detail-content fade-in">
+            <p class="panel-summary">Career strategy grounded in clinical and executive experience.</p>
+            <button class="panel-expand-btn" aria-expanded="false">Read more</button>
+            <div class="panel-expandable" hidden>
             <p>Advisory is a structured, goal-oriented engagement focused on career, vocation, and professional direction. It draws on the same relational depth as clinical work, but the scope is different. We are not treating a diagnosis. We are working through a challenge, building toward a specific outcome, or pressure-testing a decision.</p>
 
 
@@ -212,8 +219,7 @@
                 <button class="tab-nav-bottom-btn" data-tab="psychotherapy">Psychotherapy</button>
               </div>
             </div>
-
-
+            </div><!-- /.panel-expandable -->
 
             </div>
           </div>
@@ -224,6 +230,9 @@
           <div class="service-detail-inner">
             <p class="tab-panel-number" aria-hidden="true">iii.</p>
             <div class="service-detail-content fade-in">
+            <p class="panel-summary">Private, long-term clinical work for professionals in demanding environments.</p>
+            <button class="panel-expand-btn" aria-expanded="false">Read more</button>
+            <div class="panel-expandable" hidden>
             <p>Psychotherapy requires more than education, training, and experience. It requires judgment, restraint, and the capacity to tolerate complexity without rushing to resolution.</p>
 
             <p>Much of what brings people into therapy is not immediately dramatic or diagnosable. It is quieter: a sense that familiar ways of coping no longer hold; that decisions feel heavier than they should; that roles once inhabited with ease now require effort or performance.</p>
@@ -259,6 +268,7 @@
                 <button class="tab-nav-bottom-btn" data-tab="advisory">Advisory</button>
               </div>
             </div>
+            </div><!-- /.panel-expandable -->
 
             </div>
           </div>
@@ -442,10 +452,31 @@
     });
     document.getElementById('navMobileClose').addEventListener('click', closeMenu);
 
+    // Panel expand/collapse
+    document.querySelectorAll('.panel-expand-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expandable = btn.nextElementSibling;
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !isExpanded);
+        expandable.hidden = isExpanded;
+        btn.textContent = isExpanded ? 'Read more' : 'Read less';
+      });
+    });
+
+    function collapseAllPanels() {
+      document.querySelectorAll('.panel-expand-btn').forEach(btn => {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = 'Read more';
+        const expandable = btn.nextElementSibling;
+        if (expandable) expandable.hidden = true;
+      });
+    }
+
     // Tab switching
     function activateTab(tabId) {
       const tabs = document.querySelectorAll('[role="tab"]');
       const panels = document.querySelectorAll('.tab-panel');
+      collapseAllPanels();
       tabs.forEach(t => {
         const isActive = t.id === tabId;
         t.classList.toggle('active', isActive);
