@@ -111,8 +111,9 @@
           <div class="service-detail-inner">
             <p class="tab-panel-number" aria-hidden="true">i.</p>
             <div class="service-detail-content fade-in">
-            <p class="panel-summary">Independent judgment for leaders and organizations navigating high-stakes moments.</p>
-            <button class="panel-expand-btn" aria-expanded="false">Read more</button>
+            <button class="panel-summary-btn" aria-expanded="false">
+              <span class="panel-summary">Independent judgment for leaders and organizations navigating high-stakes moments.</span>
+            </button>
             <div class="panel-expandable" hidden>
             <p>There are moments when something important is not working, yet nothing is ostensibly &ldquo;broken.&rdquo; Decisions drag. Conversations repeat. People perform competence while carefully avoiding what actually needs to be addressed. The organization keeps moving, but judgment erodes and trust ebbs. Everyone feels it, but no one quite names it, primarily out of fear.</p>
 
@@ -152,8 +153,9 @@
           <div class="service-detail-inner">
             <p class="tab-panel-number" aria-hidden="true">ii.</p>
             <div class="service-detail-content fade-in">
-            <p class="panel-summary">Career strategy grounded in clinical and executive experience.</p>
-            <button class="panel-expand-btn" aria-expanded="false">Read more</button>
+            <button class="panel-summary-btn" aria-expanded="false">
+              <span class="panel-summary">Career strategy grounded in clinical and executive experience.</span>
+            </button>
             <div class="panel-expandable" hidden>
             <p>Advisory is a structured, goal-oriented engagement focused on career, vocation, and professional direction. It draws on the same relational depth as clinical work, but the scope is different. We are not treating a diagnosis. We are working through a challenge, building toward a specific outcome, or pressure-testing a decision. Engagements can be session-based, project-based, or a defined series.</p>
 
@@ -205,8 +207,9 @@
           <div class="service-detail-inner">
             <p class="tab-panel-number" aria-hidden="true">iii.</p>
             <div class="service-detail-content fade-in">
-            <p class="panel-summary">Private, long-term clinical work for professionals in demanding environments.</p>
-            <button class="panel-expand-btn" aria-expanded="false">Read more</button>
+            <button class="panel-summary-btn" aria-expanded="false">
+              <span class="panel-summary">Private, long-term clinical work for professionals in demanding environments.</span>
+            </button>
             <div class="panel-expandable" hidden>
             <p>Psychotherapy requires more than education, training, and experience. It requires judgment, restraint, and the capacity to tolerate complexity without rushing to resolution.</p>
 
@@ -422,19 +425,17 @@
     document.getElementById('navMobileClose').addEventListener('click', closeMenu);
 
     // Panel expand/collapse
-    document.querySelectorAll('.panel-expand-btn').forEach(btn => {
+    document.querySelectorAll('.panel-summary-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const expandable = btn.nextElementSibling;
         expandable.hidden = false;
         btn.setAttribute('aria-expanded', 'true');
-        btn.hidden = true;
       });
     });
 
     function collapseAllPanels() {
-      document.querySelectorAll('.panel-expand-btn').forEach(btn => {
+      document.querySelectorAll('.panel-summary-btn').forEach(btn => {
         btn.setAttribute('aria-expanded', 'false');
-        btn.hidden = false;
         const expandable = btn.nextElementSibling;
         if (expandable) expandable.hidden = true;
       });

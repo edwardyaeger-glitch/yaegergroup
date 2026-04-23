@@ -1324,31 +1324,36 @@ a:hover {
 }
 
 /* Panel collapse/expand */
+.panel-summary-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  cursor: pointer;
+  display: block;
+  max-width: 52ch;
+  font: inherit;
+  color: inherit;
+  transition: opacity 0.2s;
+}
+
+.panel-summary-btn:hover {
+  opacity: 0.7;
+}
+
+.panel-summary-btn[aria-expanded="true"] {
+  cursor: default;
+  opacity: 1;
+}
+
 .panel-summary {
   font-family: var(--font-display);
   font-size: var(--text-xl);
   font-weight: 400;
   line-height: 1.35;
   color: var(--color-text);
-  max-width: 52ch;
-}
-
-.panel-expand-btn {
-  background: none;
-  border: none;
-  padding: 0;
-  margin-top: var(--space-4);
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  color: var(--color-primary);
-  cursor: pointer;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  transition: opacity 0.2s;
-}
-
-.panel-expand-btn:hover {
-  opacity: 0.7;
+  display: block;
 }
 
 .panel-expandable {
