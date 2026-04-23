@@ -609,8 +609,9 @@ a:hover {
   padding-top: var(--space-8);
   border-top: 1px solid var(--color-divider);
   display: flex;
-  align-items: center;
-  gap: var(--space-4);
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-6);
 }
 
 .tab-nav-bottom-label {
@@ -624,36 +625,34 @@ a:hover {
   background: none;
   border: none;
   padding: 0;
-  cursor: pointer;
-  transition: color var(--transition-interactive);
-}
-
-.tab-nav-bottom-label:hover {
-  color: var(--color-primary);
+  cursor: default;
 }
 
 .tab-nav-bottom-links {
   display: flex;
-  gap: var(--space-3);
+  gap: var(--space-6);
+  flex-wrap: wrap;
 }
 
 .tab-nav-bottom-btn {
   font-family: var(--font-body);
   font-size: var(--text-sm);
-  font-weight: 500;
+  font-weight: 400;
   color: var(--color-primary);
   background: none;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
-  padding: var(--space-2) var(--space-5);
+  border: none;
+  padding: 0;
   cursor: pointer;
-  transition: color var(--transition-interactive), border-color var(--transition-interactive), background var(--transition-interactive);
+  transition: opacity var(--transition-interactive);
+}
+
+.tab-nav-bottom-btn::after {
+  content: " \2192";
+  margin-left: 0.25em;
 }
 
 .tab-nav-bottom-btn:hover {
-  color: var(--color-primary-hover);
-  border-color: var(--color-primary);
-  background: var(--color-surface);
+  opacity: 0.65;
 }
 
 /* ===== INDIVIDUAL SERVICE SECTIONS ===== */
