@@ -1730,7 +1730,7 @@ a:hover {
 
 /* Compact contact variant */
 .contact.contact--dark:has(.contact-inner--compact) {
-  padding-block: var(--space-4);
+  padding-block: var(--space-3);
 }
 .contact--dark:has(.contact-inner--compact) .contact-watermark {
   display: none;
@@ -1753,13 +1753,14 @@ a:hover {
   justify-content: center;
   gap: var(--space-3);
   margin: 0;
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
 }
 .contact-qualifier--compact {
   margin: 0;
-  font-size: var(--text-xs);
-  letter-spacing: 0.04em;
-  color: var(--color-text-faint);
+  font-size: var(--text-sm);
+  letter-spacing: 0.02em;
+  color: var(--color-text-inverse);
+  opacity: 0.7;
 }
 .contact-methods-sep {
   color: var(--color-text-faint);
