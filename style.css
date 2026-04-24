@@ -1800,8 +1800,8 @@ a:hover {
 /* ===== FOOTER ===== */
 .footer {
   padding: var(--space-3) var(--space-6);
-  border-top: 1px solid rgba(255,255,255,0.06);
-  background: #1e1c18;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  background: #3a352d;
   position: relative;
 }
 
@@ -1818,7 +1818,7 @@ a:hover {
 
 .footer-left {
   font-size: var(--text-xs);
-  color: #5a5650;
+  color: #c6bfb2;
 }
 
 .footer-inner {
