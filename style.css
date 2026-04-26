@@ -1363,6 +1363,29 @@ a:hover {
   border-top: 1px solid var(--color-divider);
   color: var(--color-text-muted);
 }
+div.panel-audience--end > p {
+  margin: 0;
+  line-height: 1.55;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+div.panel-audience--end > p + p {
+  margin-top: var(--space-3);
+}
+
+/* Secondary meta line inside an --end block (e.g. Practice link) */
+.panel-audience-meta {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+.panel-audience-meta a {
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+.panel-audience-meta a:hover {
+  opacity: 0.75;
+}
 
 /* --track variant: closer inside an advisory track (no divider rule) */
 .panel-audience--track {
