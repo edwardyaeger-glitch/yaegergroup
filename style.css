@@ -1353,6 +1353,32 @@ a:hover {
   font-weight: 500;
 }
 
+/* --end variant: closing footer at the bottom of a panel */
+.panel-audience--end {
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-10);
+  padding-left: 0;
+  padding-top: var(--space-5);
+  border-left: none;
+  border-top: 1px solid var(--color-divider);
+  color: var(--color-text-muted);
+}
+
+/* --split variant: two stacked rows (Advisory: Vocational + Contract) */
+.panel-audience--split {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 60ch;
+}
+.panel-audience--split p {
+  margin: 0;
+  line-height: 1.55;
+}
+.panel-audience--split .panel-audience-label {
+  margin-right: 0.5em;
+}
+
 .about-practice-intro {
   max-width: 52ch;
   margin-bottom: var(--space-16);
