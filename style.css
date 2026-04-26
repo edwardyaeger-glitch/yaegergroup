@@ -1364,6 +1364,17 @@ a:hover {
   color: var(--color-text-muted);
 }
 
+/* --track variant: closer inside an advisory track (no divider rule) */
+.panel-audience--track {
+  margin-top: var(--space-6);
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-top: 0;
+  border-left: none;
+  border-top: none;
+  color: var(--color-text-muted);
+}
+
 /* --split variant: two stacked rows (Advisory: Vocational + Contract) */
 .panel-audience--split {
   display: flex;
