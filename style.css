@@ -2506,3 +2506,47 @@ div.panel-audience--end > p + p {
   line-height: 1;
   transform: translateY(-1px);
 }
+
+/* ===== SUBTLE DESIGN DETAILS (Pam round, final pass) ===== */
+
+/* 1. Tabular numerals on credentials so years align cleanly. */
+.credentials-list,
+.credentials-list .school,
+.credentials-list .degree {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* 2. Copper underline on key links (email, phone, 'The Yaeger Practice',
+      'Send a note'). Subtle: 1px, 3px offset, copper at reduced opacity.
+      Scoped via .copper-link so we don't touch every anchor on the site. */
+.copper-link {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--color-primary) 45%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 200ms ease, color 200ms ease;
+}
+.copper-link:hover,
+.copper-link:focus-visible {
+  color: var(--color-primary);
+  text-decoration-color: var(--color-primary);
+}
+
+/* 3. Short copper hairline above section labels. Adds quiet structure
+      without drawing attention. Excludes service-page eyebrows (those
+      already have a numeral doing visual work). */
+.section-label:not(.page-eyebrow)::before {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--color-primary);
+  opacity: 0.55;
+  margin-bottom: var(--space-3);
+}
+/* Centered version for the Contact page (label is text-align: center). */
+.contact .section-label:not(.page-eyebrow)::before {
+  margin-inline: auto;
+}
