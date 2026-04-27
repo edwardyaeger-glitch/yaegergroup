@@ -2461,13 +2461,21 @@ div.panel-audience--end > p + p {
 .vignette-numeral {
   display: block;
   font-family: var(--font-display);
-  font-size: 0.78rem;
-  letter-spacing: 0.18em;
-  font-variant: small-caps;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  font-style: italic;
   color: var(--color-primary);
   margin-top: var(--space-6);
   margin-bottom: var(--space-2);
-  font-weight: 500;
+  font-weight: 400;
+}
+
+/* Lowercase roman numeral on service page eyebrows: keeps the discipline
+   name uppercase/tracked, but the numeral itself stays lowercase italic. */
+.page-eyebrow-numeral {
+  text-transform: lowercase;
+  font-style: italic;
+  letter-spacing: 0.02em;
 }
 .about-practice-intro p.vignette-paragraph {
   margin-top: 0;
