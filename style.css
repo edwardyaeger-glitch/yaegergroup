@@ -2393,9 +2393,21 @@ div.panel-audience--end > p + p {
 .page-nav {
   margin: 0;
   display: flex;
-  justify-content: space-between;
-  gap: var(--space-8);
+  gap: var(--space-10);
   flex-wrap: wrap;
+}
+
+/* When both prev and next exist, push next to the right edge.
+   When only one exists, it stays flush left under the eyebrow. */
+.page-nav .page-nav-next {
+  margin-left: auto;
+}
+.page-nav .page-nav-prev + .page-nav-next {
+  margin-left: auto;
+}
+.page-nav > :only-child.page-nav-next {
+  margin-left: 0;
+  align-items: flex-start;
 }
 
 .page-nav-link {
