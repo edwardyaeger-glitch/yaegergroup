@@ -2344,10 +2344,20 @@ div.panel-audience--end > p + p {
 
 /* Centered page header (monogram + overline) on standalone pages,
    matching the homepage hero treatment. Body content stays left-aligned. */
-.service-page .hero-monogram {
+.service-page .hero-monogram-link {
   display: flex;
   justify-content: center;
   margin-bottom: var(--space-8);
+  text-decoration: none;
+  transition: opacity var(--transition-interactive);
+}
+
+.service-page .hero-monogram-link:hover {
+  opacity: 0.75;
+}
+
+.service-page .hero-monogram {
+  margin-bottom: 0;
 }
 
 .service-page .hero-overline {
