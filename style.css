@@ -2076,11 +2076,27 @@ div.panel-audience--end > p + p {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 767px) {
+  /* Keep horizontal nav visible on mobile - hide hamburger entirely.
+     Three short links (About / The Work / Contact) fit at 375px. */
   .nav-desktop {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-shrink: 0;
+  }
+  .nav-desktop a {
+    font-size: var(--text-xs);
+    white-space: nowrap;
+  }
+  .nav-desktop .theme-toggle {
     display: none;
   }
   .mobile-menu-btn {
-    display: flex;
+    display: none;
+  }
+  /* Hide the 'By Referral' badge on mobile to free space for the nav */
+  .logo-badge {
+    display: none;
   }
 
   .hero {
@@ -2118,6 +2134,13 @@ div.panel-audience--end > p + p {
 @media (min-width: 768px) {
   .nav-mobile,
   .mobile-menu-btn {
+    display: none !important;
+  }
+}
+
+/* Mobile overlay should never appear now that the hamburger is hidden */
+@media (max-width: 767px) {
+  .nav-mobile {
     display: none !important;
   }
 }
@@ -2283,7 +2306,16 @@ div.panel-audience--end > p + p {
    so the row has no top border of its own. */
 .handoff-row--inline {
   margin-top: 0;
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-16);
+}
+
+/* When the handoff row is used at the bottom of a standalone service page
+   (replacing the old Prev/Next page-nav), it needs its own top divider
+   and breathing room since no .about-practice-intro precedes it. */
+.service-page .handoff-row--inline {
+  margin-top: var(--space-16);
+  padding-top: var(--space-10);
+  border-top: 1px solid var(--color-divider);
 }
 
 .handoff-eyebrow-inline {
@@ -2301,6 +2333,7 @@ div.panel-audience--end > p + p {
   color: var(--color-primary);
   text-decoration: none;
   transition: opacity var(--transition-interactive);
+  white-space: nowrap;
 }
 
 .handoff-link:hover {
