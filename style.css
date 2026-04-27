@@ -2374,10 +2374,24 @@ div.panel-audience--end > p + p {
 }
 
 /* ----- Page nav (prev/next at the bottom of subpages) ----- */
+/* Read more block: a small 'Read more' eyebrow above a Prev/Next page-nav.
+   Sits directly under the body content with no divider above. */
+.read-more-block {
+  margin-top: var(--space-10);
+}
+
+.read-more-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  margin: 0 0 var(--space-3);
+}
+
 .page-nav {
-  margin-top: var(--space-16);
-  padding-top: var(--space-8);
-  border-top: 1px solid var(--color-divider);
+  margin: 0;
   display: flex;
   justify-content: space-between;
   gap: var(--space-8);
