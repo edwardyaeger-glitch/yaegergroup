@@ -2457,10 +2457,39 @@ div.panel-audience--end > p + p {
 
 
 
-/* ===== VIGNETTE NUMERAL (chapter mark above each discipline line) ===== */
+/* ============================================================
+   PREVIEW: editorial design elements
+   - .pull-quote--margin (left-rule italic variant)
+   - .vignette-numeral
+   - .end-ornament
+   The existing .pull-quote (centered, hairline-bookended) is kept as-is.
+   ============================================================ */
+
+/* Margin pull quote variant: left copper rule, italic, copper-toned. */
+.pull-quote--margin {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 1.05rem + 0.6vw, 1.5rem);
+  font-style: italic;
+  font-weight: 400;
+  text-align: left;
+  line-height: 1.45;
+  color: var(--color-primary);
+  margin: var(--space-8) 0;
+  padding: var(--space-2) 0 var(--space-2) var(--space-6);
+  border-left: 1px solid var(--color-primary);
+  max-width: 48ch;
+}
+.pull-quote--margin::before,
+.pull-quote--margin::after {
+  content: none;
+  display: none;
+}
+
+/* Roman numeral marker preceding each discipline vignette.
+   Small caps, copper, sits above the paragraph as a tiny chapter mark. */
 .vignette-numeral {
   display: block;
-  font-family: var(--font-display);
+  font-family: var(--font-serif, Georgia, serif);
   font-size: 0.78rem;
   letter-spacing: 0.18em;
   font-variant: small-caps;
@@ -2473,7 +2502,8 @@ div.panel-audience--end > p + p {
   margin-top: 0;
 }
 
-/* ===== END-OF-SECTION ORNAMENT (hairline rules + copper diamond) ===== */
+/* End-of-section ornament: a hairline rule with a small copper diamond
+   centered on it, placed at the close of a section. */
 .end-ornament {
   display: flex;
   align-items: center;
