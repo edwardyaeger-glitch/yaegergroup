@@ -328,6 +328,10 @@ a:hover {
 .hero-overline a:hover {
   opacity: 0.7;
 }
+.hero-overline-meta {
+  color: var(--color-text-faint);
+  font-style: normal;
+}
 
 .hero h1 {
   font-family: var(--font-display);
@@ -336,7 +340,16 @@ a:hover {
   color: var(--color-text);
   line-height: 1.1;
   max-width: 16ch;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
+}
+
+.hero-subline {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  max-width: 48ch;
+  line-height: 1.6;
+  margin: 0 auto;
 }
 
 .hero-subtitle {
@@ -593,6 +606,16 @@ a:hover {
 }
 
 /* Drop caps */
+#panel-contact .service-detail-content > .panel-expandable > p:first-child::first-letter {
+  initial-letter: unset;
+  float: none;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
 .tab-panel .service-detail-content > .panel-expandable > p:first-child::first-letter {
   font-family: var(--font-display);
   font-size: 3.4em;
@@ -1333,6 +1356,60 @@ a:hover {
 }
 
 /* Panel lead summary */
+/* Wayfinding banner at top of a panel (e.g. Psychotherapy → The Yaeger Practice) */
+.panel-banner {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6);
+  padding: var(--space-3) var(--space-4);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+  border-left: 2px solid var(--color-primary);
+  text-decoration: none;
+  transition: background var(--transition-interactive);
+}
+.panel-banner:hover {
+  background: color-mix(in srgb, var(--color-primary) 14%, transparent);
+}
+.panel-banner-label {
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+.panel-banner-link {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  font-weight: 500;
+}
+.panel-banner-arrow {
+  display: inline-block;
+  margin-left: 0.15em;
+  color: var(--color-primary);
+  transition: transform var(--transition-interactive);
+}
+.panel-banner:hover .panel-banner-arrow {
+  transform: translateX(3px);
+}
+
+/* Contact tab: per-track wayfinding rows */
+.contact-track {
+  max-width: 60ch;
+  margin-top: var(--space-5);
+  line-height: 1.7;
+}
+.contact-track-label {
+  display: inline-block;
+  margin-right: 0.4em;
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
 .panel-summary {
   font-family: var(--font-display);
   font-size: var(--text-xl);
@@ -1934,6 +2011,26 @@ div.panel-audience--end > p + p {
 }
 .footer-right a:hover {
   color: var(--color-text-muted);
+}
+
+/* Footer wayfinding line linking both sites */
+.footer-wayfinding {
+  display: block;
+  font-size: var(--text-xs);
+  color: #c6bfb2;
+  margin: 0;
+}
+.footer-wayfinding a {
+  color: #e9e1d2;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(233, 225, 210, 0.35);
+  transition: border-color var(--transition-interactive);
+}
+.footer-wayfinding a:hover {
+  border-bottom-color: rgba(233, 225, 210, 0.85);
+}
+.footer-wayfinding-meta {
+  color: #8f897e;
 }
 
 
