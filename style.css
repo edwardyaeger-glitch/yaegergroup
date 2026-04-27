@@ -2278,6 +2278,14 @@ div.panel-audience--end > p + p {
   margin: 0;
 }
 
+/* Inline variant: sits between practice intro and About Edward */
+.handoff-row--inline {
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-12);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-divider);
+}
+
 .handoff-eyebrow-inline {
   font-family: var(--font-body);
   font-size: var(--text-xs);
