@@ -2287,32 +2287,16 @@ div.panel-audience--end > p + p {
 }
 
 /* When the handoff row is used at the bottom of a standalone service page,
-   it should sit directly under the body text as a continuation cue —
+   it sits directly under the body text as a 'read more' cue —
    no top divider, no separate-section padding. */
 .service-page .handoff-row--inline {
   margin-top: var(--space-8);
   margin-bottom: 0;
-  padding-top: 0;
-  border-top: none;
 }
 
-/* Condense the handoff row when 5 links would otherwise overflow.
-   Smaller type and tighter gap so it fits on most laptop and tablet widths. */
-@media (max-width: 900px) {
-  .handoff-row {
-    gap: var(--space-5);
-  }
-  .handoff-link {
-    font-size: var(--text-sm);
-  }
-}
 @media (max-width: 600px) {
   .handoff-row {
-    gap: var(--space-4);
-    column-gap: var(--space-5);
-  }
-  .handoff-link .handoff-arrow {
-    margin-left: 0.15em;
+    gap: var(--space-5);
   }
 }
 
