@@ -1399,12 +1399,12 @@ a:hover {
 /* Contact tab: per-track wayfinding rows */
 .contact-track {
   max-width: 60ch;
-  margin-top: var(--space-5);
+  margin-top: var(--space-6);
   line-height: 1.7;
 }
 .contact-track-label {
-  display: inline-block;
-  margin-right: 0.4em;
+  display: block;
+  margin-bottom: var(--space-2);
   font-size: var(--text-xs);
   letter-spacing: 0.12em;
   text-transform: uppercase;
