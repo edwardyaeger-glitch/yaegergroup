@@ -1608,6 +1608,61 @@ div.panel-audience--end > p + p {
   box-shadow: 0 0 0 3px var(--color-primary), 0 8px 24px rgba(26, 24, 21, 0.12);
 }
 
+/* Contact-page portrait — quieter, smaller variant of .about-portrait,
+   placed after the contact tracks. Reuses the copper-corner treatment. */
+.contact-portrait {
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-10);
+  position: relative;
+  display: inline-block;
+}
+
+.contact-portrait::before,
+.contact-portrait::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.contact-portrait::before {
+  top: -5px;
+  left: -5px;
+  border-top: 2px solid var(--color-primary);
+  border-left: 2px solid var(--color-primary);
+}
+
+.contact-portrait::after {
+  bottom: -5px;
+  right: calc(100% - 240px - 5px);
+  border-bottom: 2px solid var(--color-primary);
+  border-right: 2px solid var(--color-primary);
+}
+
+@media (max-width: 767px) {
+  .contact-portrait::after {
+    right: -5px;
+  }
+}
+
+.contact-portrait img {
+  width: 100%;
+  max-width: 240px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-md);
+  filter: grayscale(0.15);
+  transition: filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+.contact-portrait img:hover {
+  filter: grayscale(0);
+  box-shadow: 0 0 0 3px var(--color-primary), 0 8px 24px rgba(26, 24, 21, 0.12);
+}
+
 .about-layout {
   display: grid;
   grid-template-columns: 1fr;
