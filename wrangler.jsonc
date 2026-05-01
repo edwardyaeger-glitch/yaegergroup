@@ -10,5 +10,9 @@
   },
   "compatibility_flags": [
     "nodejs_compat"
+  ],
+  "routes": [
+    { "pattern": "yaegergroup.com", "custom_domain": true },
+    { "pattern": "www.yaegergroup.com", "custom_domain": true }
   ]
 }
