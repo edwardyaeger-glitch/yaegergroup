@@ -2363,6 +2363,12 @@ div.panel-audience--end > p + p {
 .service-page .hero-overline {
   text-align: center;
   margin-bottom: var(--space-12);
+  /* Span the full service-detail-inner width so text-align:center
+     centers the dot-nav across the full column (and the page),
+     overriding the global p { max-width: 72ch } from base.css. */
+  max-width: none;
+  width: 100%;
+  margin-inline: 0;
 }
 
 .service-page .page-eyebrow {
