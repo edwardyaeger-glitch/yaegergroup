@@ -341,6 +341,9 @@ a:hover {
   line-height: 1.1;
   max-width: 16ch;
   margin-bottom: var(--space-6);
+  /* Distribute words evenly across lines so the headline reads as
+     a deliberate two-up rather than ragged four-line break. */
+  text-wrap: balance;
 }
 
 .hero-subline {
@@ -2113,7 +2116,13 @@ div.panel-audience--end > p + p {
     width: 120px;
   }
   .hero h1 {
-    font-size: var(--text-2xl);
+    /* Tighter mobile sizing so the headline lands as two balanced lines
+       above the fold (per Adam's feedback: "justified so you don't have
+       to scroll"). Drop the 16ch cap on mobile so balance can use the
+       full column width. */
+    font-size: 1.75rem;
+    max-width: none;
+    line-height: 1.15;
   }
 
   .section {
